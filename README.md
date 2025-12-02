@@ -22,6 +22,9 @@ Download the dataset from Kaggle and place it in the root directory:
      - Accuracy: 73.41%
 
 2. **`model_comparison.ipynb`** - Comprehensive Model Comparison ✨ NEW
+   - **Dual Dataset Comparison**:
+     - 🔵 **Balanced Dataset (50/50)** - Artificial balance for training comparison
+     - 🟢 **Realistic Dataset (Unbalanced)** - Natural fraud rate for production simulation
    - Implements and compares 5+ ML models:
      - ✅ Logistic Regression (L2 regularization)
      - ✅ Random Forest (with hyperparameter tuning)
@@ -29,7 +32,7 @@ Download the dataset from Kaggle and place it in the root directory:
      - ✅ XGBoost (Gradient Boosting)
      - ✅ Naive Bayes (GaussianNB)
    - 3-fold Cross-validation for all models
-   - Comprehensive metrics evaluation
+   - Comprehensive metrics evaluation on BOTH datasets
    - Business impact analysis
    - Visual comparisons and recommendations
 
@@ -80,12 +83,26 @@ The project uses extensive feature engineering to improve fraud detection:
 
 ## 📈 Model Comparison Results
 
-Run `model_comparison.ipynb` to see the complete comparison table including:
+The `model_comparison.ipynb` notebook runs comparisons on **TWO different datasets**:
+
+### 🔵 Balanced Dataset (50/50)
+- **Purpose**: Fair model comparison and training
+- **Composition**: Equal number of fraud and legitimate transactions
+- **Use case**: Understanding model capabilities without class imbalance bias
+- **Comparable to**: Baseline ANN performance (81.78% sensitivity)
+
+### 🟢 Realistic Dataset (Unbalanced)
+- **Purpose**: Production scenario simulation
+- **Composition**: Natural fraud rate (~5-10% typical in e-commerce)
+- **Use case**: Real-world performance evaluation
+- **Key insight**: Shows true precision/recall trade-offs in production
+
+### Results Include:
 - All performance metrics (Accuracy, Sensitivity, Specificity, Precision, F1, F2)
-- Confusion matrices
+- Confusion matrices for both datasets
 - Business metrics (frauds detected, money saved, review costs)
 - Visual comparisons
-- Recommendations for production deployment
+- Dataset-specific recommendations
 
 ## 🔧 Requirements
 
